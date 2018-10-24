@@ -1,2 +1,4 @@
 com.example.label1="a label"
 traefik.frontend.rule=Host:jira.docker.localhost
+
+sudo docker run --detach --label-file ./labels --net host --mount source=jira78,destination=/var/atlassian/jira --publish 80:8080  cptactionhank/atlassian-jira:latest 
