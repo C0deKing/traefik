@@ -1,15 +1,1 @@
-
-
-version: '3'
-
-services:
-  jira:
-    image: cptactionhank/atlassian-jira:latest # The official Traefik docker image
-    ports:
-      - "8080:8080"
-    volumes:      
-      - $HOME/Documents/traefik/traefik.toml:/.traefik/traefik.toml
-      - $HOME/jira:/var/atlassian/jira
-    labels:
-      - "traefik.frontend.rule=Host:jira.docker.localhost"
-    
+sudo docker run --detach --label-file ./labels --net host --mount source=jira78,destination=/var/atlassian/jira --publish 80:8080  cptactionhank/atlassian-jira:latest 

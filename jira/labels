@@ -1,0 +1,2 @@
+com.example.label1="a label"
+traefik.frontend.rule=Host:jira.docker.localhost
