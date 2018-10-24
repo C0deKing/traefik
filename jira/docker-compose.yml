@@ -9,7 +9,7 @@ services:
       - "80:8080"
     volumes:      
       - $HOME/Documents/traefik/traefik.toml:/.traefik/traefik.toml
-      - jira:/var/atlassian/jira
+      - /jira:/var/atlassian/jira
     labels:
       - "traefik.frontend.rule=Host:jira.docker.localhost"
     
