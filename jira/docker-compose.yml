@@ -6,7 +6,7 @@ services:
   jira:
     image: cptactionhank/atlassian-jira:latest # The official Traefik docker image
     ports:
-      - "80:8080"
+      - "8080:8080"
     volumes:      
       - $HOME/Documents/traefik/traefik.toml:/.traefik/traefik.toml
       - /jira:/var/atlassian/jira
