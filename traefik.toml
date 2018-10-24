@@ -1,0 +1,18 @@
+[entryPoints]
+  [entryPoints.http]
+  address = ":80"
+  [entryPoints.https]
+  address = ":443"
+    [entryPoints.https.tls]
+
+[mattjalvarez]
+email = "test@traefik.io"
+storage = "mattjalvarez.json"
+caServer = "https://acme-staging-v02.api.letsencrypt.org/directory"
+entryPoint = "https"
+  [mattjalvarez.httpChallenge]
+  entryPoint = "http"
+
+[[mattjalvarez.domains]]
+  main = "mattjalvarez.com"
+  sans = ["faible.mattjalvarez.com", "www.mattjalvarez.com"]
