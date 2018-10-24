@@ -5,14 +5,14 @@
   address = ":443"
     [entryPoints.https.tls]
 
-[mattjalvarez]
+[acme]
 email = "test@traefik.io"
-storage = "mattjalvarez.json"
+storage = "acme.json"
 caServer = "https://acme-staging-v02.api.letsencrypt.org/directory"
 entryPoint = "https"
-  [mattjalvarez.httpChallenge]
+  [acme.httpChallenge]
   entryPoint = "http"
 
-[[mattjalvarez.domains]]
+[[acme.domains]]
   main = "mattjalvarez.com"
-  sans = ["faible.mattjalvarez.com", "www.mattjalvarez.com"]
+  sans = ["www.mattjalvarez.com", "faible.mattjalvarez.com"]
